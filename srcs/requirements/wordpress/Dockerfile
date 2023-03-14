@@ -1,19 +1,26 @@
-FROM    debian:buster
+FROM	debian:buster
 
-RUN     apt-get update -y
-RUN     apt-get upgrade -y
-RUN     apt-get install php-fpm -y
-RUN     apt-get install vim -y
-RUN     apt-get install wget -y
-RUN     apt-get install tar -y
+RUN		apt-get update -y && \
+		apt-get upgrade -y && \
+		apt-get -y install \
+		mariadb-client \
+		wget \
+		curl \
+		tar \
+		php7.3-fpm \
+		php-cli \
+		php-mysql \
+		vim \
+		sudo
 
-RUN     wget https://wordpress.org/latest.tar.gz
-RUN     tar -xvzf latest.tar.gz
-RUN     mkdir -p /var/www/html/wordpress
-RUN     mv wordpress/ var/www/html/
-
+COPY	./tools/wordpress_setup.sh /tmp/wordpress_setup.sh
 COPY	./conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
+
+RUN		wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp
+
+WORKDIR	/var/www/html/wordpress
+RUN		mkdir -p /run/php
 
 EXPOSE	9000
 
-CMD     service php7.3-fpm start && tail -f /dev/null
+ENTRYPOINT ["sh", "/tmp/wordpress_setup.sh"]
