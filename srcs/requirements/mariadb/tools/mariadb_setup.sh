@@ -4,7 +4,7 @@ set -e
 
 MYSQL_SETUP_FILE=/var/lib/mysql/.setup
 
-service mysql start;
+service mysql start
 
 if [ ! -e $MYSQL_SETUP_FILE ]; then # 처음에만 실행되도록 하기 위해서
 
@@ -24,4 +24,4 @@ if [ ! -e $MYSQL_SETUP_FILE ]; then # 처음에만 실행되도록 하기 위해
 	touch $MYSQL_SETUP_FILE
 fi
 
-exec mysqld --console
+exec mysqld_safe

@@ -1,7 +1,7 @@
-NAME 			=	inception
+NAME = inception
 
-VOLUME_PATH		:= 	/home/jrim/data
-HOST_LINK		:= 	"127.0.0.1	jrim.42.fr" > /etc/hosts
+VOLUME_PATH	:= /home/jrim/data
+HOST_LINK	:= "127.0.0.1	jrim.42.fr" > /etc/hosts
 
 all		:	$(NAME)
 
