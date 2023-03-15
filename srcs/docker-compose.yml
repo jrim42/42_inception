@@ -50,6 +50,7 @@ volumes:
     driver_opts:
       type: volume
       device: /home/jrim/data/wordpress
+      # device: /home/jrim/Documents/inception/srcs/requirements/tools/
       o: bind
 
   db_volume:
@@ -57,6 +58,7 @@ volumes:
     driver_opts:
       type: volume
       device: /home/jrim/data/mariadb
+      # device: /home/jrim/Documents/inception/srcs/requirements/tools/
       o: bind
 
 networks:
