@@ -32,7 +32,7 @@ lc-messages-dir         = /usr/share/mysql
 # localhost which is more compatible and is not less secure.
 
 ###############################
-# 모든곳을 통해 database에 접근해야하기 때문에 127.0.0.1을 0.0.0.0으로 바꿔줌
+# 모든곳을 통해 db에 접근해야하기 때문에 127.0.0.1을 0.0.0.0으로 변경
 bind-address            = 0.0.0.0
 ###############################
 
