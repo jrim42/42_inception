@@ -23,6 +23,7 @@ COPY    conf/nginx.conf /etc/nginx/sites-available/default
 		# nginx 는 설정파일을 나눠서 관리 하는 기능을 제공 하고 있다.
 		# sites-available: 가상 서버 환경들에 대한 설정 파일들이 위치하는 부분
 
+# 이 docker image는 443번 포트를 외부에 공개할 예정이라는 의미
 EXPOSE	443
 
 # docker run 명령을 실행했을 때 아래의 명령어가 실행된다.

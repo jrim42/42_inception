@@ -1,3 +1,5 @@
+# mariaDB 서버와 관련한 설정은 /etc/mysql/mariadb.conf.d 디렉토리 안의 50-server.cnf 파일에서 한다.
+
 #
 # These groups are read by MariaDB server.
 # Use it for options that only the server (but not clients) should see

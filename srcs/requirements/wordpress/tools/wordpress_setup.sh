@@ -2,7 +2,10 @@
 
 set -e
 
+# 파일의 소유자를 변경하는 명령
 chown -R www-data:www-data /var/www/
+	# -R: Change the user ID and/or the group ID 
+	# for the file hierarchies rooted in the files instead of just the files themselves.
 
 if [ ! -f "/var/www/html/wordpress/index.php" ]; then
 	sudo -u www-data sh -c " \
@@ -13,5 +16,10 @@ if [ ! -f "/var/www/html/wordpress/index.php" ]; then
 	wp plugin update --all
 	"
 fi
+
+# wp core download: Downloads and extracts WordPress core files to the specified path
+	# --locale=<locale>: Select which language you want to download
+# wp core install: Creates the WordPress tables in the database using the URL, title, and default admin user details provided
+	# --url=<url>: The address of the new site.
 
 exec /usr/sbin/php-fpm7.3 -F

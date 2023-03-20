@@ -22,6 +22,7 @@ RUN		wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.p
 WORKDIR	/var/www/html/wordpress
 RUN		mkdir -p /run/php
 
+# 이 docker image는 9000번 포트를 외부에 공개할 예정이라는 의미
 EXPOSE	9000
 
 ENTRYPOINT ["sh", "/tmp/wordpress_setup.sh"]
