@@ -6,6 +6,7 @@ HOST_LINK	:= "127.0.0.1	jrim.42.fr" > /etc/hosts
 all		:	$(NAME)
 
 $(NAME)	:
+	@sudo chmod 666 /var/run/docker.sock
 	@sudo mkdir -p $(VOLUME_PATH)/mariadb/
 	@sudo mkdir -p $(VOLUME_PATH)/wordpress/
 	@sudo echo $(HOST_LINK)
