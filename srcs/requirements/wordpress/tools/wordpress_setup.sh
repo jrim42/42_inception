@@ -19,7 +19,18 @@ fi
 
 # wp core download: Downloads and extracts WordPress core files to the specified path
 	# --locale=<locale>: Select which language you want to download
+# wp config create: Creates a new wp-config.php with database constants, and verifies that the database constants are correct.
+	# --dbname=<dbname>: Set the database name.
+	# --dbuser=<dbuser>: Set the database user.
+	# --dbpass=<dbpass>: Set the database user password.
+	# --dbhost=<dbhost>: Set the database host. (default: localhost)
+	# --dbcharset=<dbcharset>: Set the database charset. (default: utf8)
 # wp core install: Creates the WordPress tables in the database using the URL, title, and default admin user details provided
 	# --url=<url>: The address of the new site.
+	# --title=<site-title>: The title of the new site.
+	# --admin_user=<username>: The name of the admin user.
+	# --admin_password=<password>: The password for the admin user. Defaults to randomly generated string.
+# wp user create: Creates a new user.
+# wp plugin update: Updates one or more plugins.
 
 exec /usr/sbin/php-fpm7.3 -F
